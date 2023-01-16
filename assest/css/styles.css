@@ -12,7 +12,7 @@
 /* ---- Base Rules ---- */
 body {
     background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(147, 153, 177, 0.827) 70%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
@@ -23,7 +23,7 @@ body {
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
-    margin: 2em 1rem;
+    text-align: center;
 }
 
 @media only screen and (min-width: 35em){
@@ -45,57 +45,67 @@ p {
     color: #eee;
 }
 
-/* ---- Layout Rules ---- */
-main {
-    margin: 10vh 1em 10vh;
-}
-
-.main-hero {
-    min-height: 40vh;
-    padding-top: 3em;
-}
-
-section {
-    position: relative;
-    min-height: 80vh;
-}
-
-
-/* ---- Module Rules ---- */
-
 /* Navigation Styles*/
-.navbar__menu ul {
+.ulClass {
     padding-left: 0;
     margin: 0;
     text-align: right;
 }
 
-.navbar__menu li {
+.liClass{
     display: inline-block;
 }
 
-.navbar__menu .menu__link {
+.linkClass{
     display: block;
     padding: 1em;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-decoration: none;
     color: #000;
 }
 
-.navbar__menu .menu__link:hover {
-    background: #333;
+.linkHover {
+    background: rgba(147, 153, 177, 0.827);
     color: #fff;
-    transition: ease 0.3s all;
-}
+    transition: ease-in-out 0.4s all;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    -webkit-transition: ease-in-out 0.4s all;
+    -moz-transition: ease-in-out 0.4s all;
+    -ms-transition: ease-in-out 0.4s all;
+    -o-transition: ease-in-out 0.4s all;
 
-/* Header Styles */
-.page__header {
-    background: #fff;
+}
+.page-header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
 }
+/* ****************************************************************** */
+
+/* sections style  */
+main {
+    margin: 10vh 1em 10vh;
+}
+.main-hero {
+    min-height: 85vh;
+    padding-top: 6em;
+}
+.text{
+    width: 70%;
+    padding-top: 70px;
+    text-align: center;
+    margin-left: 15%;
+}
+section {
+    position: relative;
+    min-height: 80vh;
+}
+/**********************************************************************/
 
 /* Footer Styles */
 .page__footer {

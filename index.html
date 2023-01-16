@@ -10,20 +10,32 @@
   <!-- Load Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
   <link href="./assest/css/styles.css" rel="stylesheet">
+  <!-- bootsrap link  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
-  
+  <!-- hint :- i use pascal-case to naming classes  -->
   <!-- HTML Follows BEM naming conventions 
   IDs are only used for sections to connect menu achors to sections -->
   <header class="page-header">
-    <nav class="navbar-menu">
-      <!-- Navigation starts as empty UL that will be populated with JS -->
-      <ul id="navbar-list"></ul>
+    <nav class="navbar-menu navbar bg-body-tertiary" >
+        <div class="container-fluid" id="navbar">
+          <a class="navbar-brand" href="#">
+            <img src="./assest/images/icon-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            udacity landing page 
+          </a>
+        </div>
+        
     </nav>
   </header>
   <main>
-    <header class="main__hero">
+    <header class="main-hero">
       <h1>Landing Page </h1>
+      <div class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum fugiat vel deleniti suscipit
+        tempore necessitatibus soluta? Dolorum id voluptatum unde inventore! Repellat vero nemo cumque?
+        Eaque aperiam quas in distinctio.
+      </div>
     </header>
     <!-- Each Section has an ID (used for the anchor) and 
     a data attribute that will populate the li node.
@@ -58,5 +70,9 @@
     <p>&copy Udacity</p>
   </footer>
 
+
+    <!-- add script file link  -->
+    <script src="./assest/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
