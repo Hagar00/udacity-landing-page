@@ -90,8 +90,14 @@ for (var j = 0 ; j < liArray.length ; j++){
 
     sectionDiv.appendChild(title);
     sectionDiv.appendChild(content);
+   
     section.appendChild(sectionDiv);
-    console.log(section);
+    if(j % 2 != 0){
+        // liArray[j].classList.add("oddSec");
+        console.log(sectionDiv);
+        sectionDiv.classList.add("oddSec");
+    }
+    // console.log(section);
 }
 /*************************************** end sections *********************************/
 

@@ -138,7 +138,15 @@ section:nth-of-type(even) .landing__container {
     margin-left: auto;
     text-align: right; 
 }
-
+.evenSec{
+    margin-right: 0;
+    margin-left: auto;
+    text-align: right; 
+}
+.oddSec{
+    margin-left: auto;
+    text-align: center;
+}
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
