@@ -15,6 +15,7 @@ ulList.classList.add("ulClass");
 var liArray = [
     "Home", "gallery","about","contact"
 ];
+var section = document.getElementById("section");
 
 /*********************** end define navbar variable**********************************/
 
@@ -62,10 +63,38 @@ for( let i = 0 ; i < liArray.length; i++ ){
     function outHover(e){
         e.target.classList.remove("linkHover");
     };
-
 }
 itemListDiv.appendChild(ulList); // append ul to div in nav 
-/******************* end navbar ************************/
+
+/*************************** end navbar ***********************************/
+
+/* ******************build sections of page *********************************/
+// add dynamic sections 
+ 
+for (var j = 0 ; j < liArray.length ; j++){
+    var sectionDiv = document.createElement("div");
+    sectionDiv.classList.add("landing__container");
+    var title = document.createElement("h2");
+    title.innerHTML = liArray[j];
+    var content = document.createElement("p");
+    content.innerHTML= ` this is content of section ${liArray[j]} consectetur adipiscing elit. Morbi fermentum metus faucibus lectus 
+                         pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. 
+                         Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, 
+                         nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus 
+                         imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. 
+                         Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie
+                          semper in tellus. Sed congue et odio sed euismod.
+                         Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit,
+                          vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor.
+                           Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non`;
+
+    sectionDiv.appendChild(title);
+    sectionDiv.appendChild(content);
+    section.appendChild(sectionDiv);
+    console.log(section);
+}
+/*************************************** end sections *********************************/
+
 
 // Add class 'active' to section when near top of viewport
 
