@@ -1,123 +1,87 @@
-// define global variable 
+// In this function, I relied on Osama Al-Zero in making the scroll and w3school in linking the li with his section 
 
-/* **************** start define navbar variable ***************/ 
-var liList;
-var aLi;
-var itemListDiv;
-var ulList;
-// create div have ul 
-itemListDiv = document.createElement("div");
-itemListDiv.setAttribute("id","navbarNav");
-// create ul element
-ulList = document.createElement("ul");
-ulList.classList.add("ulClass");
-// create array to store links have key and values 
-var liArray = [
-    "Home", "gallery","about","contact"
-];
-var section = document.getElementById("section");
+// function to create navbar 
+function navbarCreate(){
+    // array of li items in navbar 
+    var links = ["home", "gallery", "contact","about"];
+    // create contaner div of navbar item 
+    var navbarDiv = document.createElement("div");
+    navbarDiv.setAttribute("id","navbar");
 
-/*********************** end define navbar variable**********************************/
+    // create ul 
+    var navUl = document.createElement("ul");
+    navUl.classList.add("ulClass");
 
+    // create for loop to create li and links 
+    for(var i = 0; i < links.length; i++){
+        var navLi = document.createElement("li");
+        navLi.classList.add("liClass");
 
-/*
- * Start Helper Functions
- * 
-*/
-//  function to add hover in li 
+        var navA = document.createElement("a");
+        navA.setAttribute("href","#"+links[i].toLowerCase());
+        navA.innerHTML = links[i];
+        navA.classList.add("linkClass");
 
+        navLi.appendChild(navA);
+        navUl.appendChild(navLi);
 
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-/**********************  build the nav ********************** */
-
-// append div hav ul into nav in header 
-document.getElementById("navbar").appendChild(itemListDiv);
-// to create list of li we have need create for loop 
-for( let i = 0 ; i < liArray.length; i++ ){
-    liList = document.createElement("li"); // create li list 
-    liList.classList.add("liClass");
-   
-    aLi = document.createElement("a"); // create link element 
-    aLi.classList.add("linkClass");
-    aLi.setAttribute("href","#"+ liArray[i]); // add attribute href to link of section 
-    aLi.innerHTML= liArray[i]; // add array to html 
-    liList.appendChild(aLi); 
-    ulList.appendChild(liList);
-    console.log(liList);
-
-    //  function to add hover in li 
-    aLi.addEventListener("mouseover", onHover);
-    function onHover(e){
+        //  function to add hover in li 
+        navA.addEventListener("mouseover", onHover);
+        function onHover(e){
         e.target.classList.add("linkHover");
-    };
+        };
 
-    // function remove hover on li 
-    aLi.addEventListener("mouseout", outHover);
-    function outHover(e){
+        // function remove hover on li 
+        navA.addEventListener("mouseout", outHover);
+        function outHover(e){
         e.target.classList.remove("linkHover");
-    };
-}
-itemListDiv.appendChild(ulList); // append ul to div in nav 
-
-/*************************** end navbar ***********************************/
-
-/* ******************build sections of page *********************************/
-// add dynamic sections 
- 
-for (var j = 0 ; j < liArray.length ; j++){
-    var sectionDiv = document.createElement("div");
-    sectionDiv.classList.add("landing__container");
-    var title = document.createElement("h2");
-    title.innerHTML = liArray[j];
-    var content = document.createElement("p");
-    content.innerHTML= ` this is content of section ${liArray[j]} consectetur adipiscing elit. Morbi fermentum metus faucibus lectus 
-                         pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. 
-                         Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, 
-                         nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus 
-                         imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. 
-                         Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie
-                          semper in tellus. Sed congue et odio sed euismod.
-                         Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit,
-                          vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor.
-                           Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non`;
-
-    sectionDiv.appendChild(title);
-    sectionDiv.appendChild(content);
-   
-    section.appendChild(sectionDiv);
-    if(j % 2 != 0){
-        // liArray[j].classList.add("oddSec");
-        console.log(sectionDiv);
-        sectionDiv.classList.add("oddSec");
+        };
     }
-    // console.log(section);
-}
-/*************************************** end sections *********************************/
+    navbarDiv.appendChild(navUl);
+ 
 
+    // create for loop to create sections 
+    for(var k = 0; k <links.length; k++){
+        var sectionDiv = document.createElement("div");
+            sectionDiv.classList.add("landing__container");
+            sectionDiv.id = links[k].toLowerCase();
+            var title = document.createElement("h2");
+            title.innerHTML = links[k];
+            var content = document.createElement("p");
+            content.innerHTML= ` this is content of section ${links[k]} consectetur adipiscing elit. Morbi fermentum metus faucibus lectus 
+                                 pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. 
+                                 Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, 
+                                 nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus 
+                                 imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. 
+                                 Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie
+                                  semper in tellus. Sed congue et odio sed euismod.
+                                 Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit,
+                                 vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor.
+                                 Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non`;
+        
+            sectionDiv.appendChild(title);
+            sectionDiv.appendChild(content);
+            document.getElementById("sections").appendChild(sectionDiv);
+            if(k % 2 != 0){
+                // liArray[k].classList.add("oddSec");
+                console.log(sectionDiv);
+                sectionDiv.classList.add("oddSec");
+            }
+    }
 
-// Add class 'active' to section when near top of viewport
+    // add click event on links in li 
+    var navLinks = document.querySelectorAll("div a");
+    for(var j= 0; j < navLinks.length ; j++){
+        navLinks[j].addEventListener("click", function(e){
+            e.preventDefault();
+            var secId = e.target.getAttribute("href");
+            document.querySelector(secId).scrollIntoview({
+                behavior : "smooth"
+            });
+        });
+    }
+   document.getElementById("nav").appendChild(navbarDiv);
+};
 
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
+navbarCreate();
 
