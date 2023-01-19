@@ -32,16 +32,12 @@
 
    ![landing-page](https://user-images.githubusercontent.com/108625756/213463936-f6d6fdee-0a6e-45b2-9f17-2564e02a3eff.jpeg)
 
-    => this is image is for home section .
-    
-    ![home](https://user-images.githubusercontent.com/108625756/213464885-52afe810-2ae3-4653-86e4-a5a559e47bb1.jpeg)
+   
 
 ### reference links 
 
     you can find Intersection Observer API here :
-
-    *[links](#MDN)
-
+    
     <https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API> 
 
 ### usage 
