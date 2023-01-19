@@ -1,24 +1,24 @@
 // In this function, I relied on Osama Al-Zero in making the scroll and w3school in linking the li with his section 
 
-var navbar = document.getElementById("nav");
+let navbar = document.getElementById("nav");
 // function to create navbar 
 function navbarCreate(){
     // array of li items in navbar 
-    var links = ["home", "gallery", "contact","about"];
+    let links = ["home", "gallery", "contact","about"];
     // create contaner div of navbar item 
-    var navbarDiv = document.createElement("div");
+    let navbarDiv = document.createElement("div");
     navbarDiv.setAttribute("id","navbar");
 
     // create ul 
-    var navUl = document.createElement("ul");
+    let navUl = document.createElement("ul");
     navUl.classList.add("ulClass");
 
     // create for loop to create li and links 
-    for(var i = 0; i < links.length; i++){
-        var navLi = document.createElement("li");
+    for(let i = 0; i < links.length; i++){
+        let navLi = document.createElement("li");
         navLi.classList.add("liClass");
 
-        var navA = document.createElement("a");
+        let navA = document.createElement("a");
         navA.setAttribute("href","#"+links[i].toLowerCase());
         navA.innerHTML = links[i];
         navA.classList.add("linkClass");
@@ -43,16 +43,16 @@ function navbarCreate(){
  
 
     // create for loop to create sections 
-    for(var k = 0; k <links.length; k++){
-        var section = document.createElement("section");
+    for(let k = 0; k <links.length; k++){
+        let section = document.createElement("section");
         section.id = links[k].toLowerCase();
         // section.setAttribute("data-nav",  )
-        var sectionDiv = document.createElement("div");
+        let sectionDiv = document.createElement("div");
             sectionDiv.classList.add("landing__container");
             sectionDiv.id = links[k].toLowerCase();
-            var title = document.createElement("h2");
+            let title = document.createElement("h2");
             title.innerHTML = links[k];
-            var content = document.createElement("p");
+            let content = document.createElement("p");
             content.innerHTML= ` this is content of section ${links[k]} consectetur adipiscing elit. Morbi fermentum metus faucibus lectus 
                                  pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. 
                                  Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, 
@@ -76,11 +76,11 @@ function navbarCreate(){
     }
 
     // add click event on links in li 
-    var navLinks = document.querySelectorAll("div a");
-    for(var j= 0; j < navLinks.length ; j++){
+    let navLinks = document.querySelectorAll("div a");
+    for(let j= 0; j < navLinks.length ; j++){
         navLinks[j].addEventListener("click", function(e){
             e.preventDefault();
-            var secId = e.target.getAttribute("href");
+            let secId = e.target.getAttribute("href");
             document.querySelector(secId).scrollIntoview({
                 behavior : "smooth"
             });
@@ -128,7 +128,7 @@ observingSec();
 
 // i learned this function in js course in maharatech by eng:neven 
 // function to button to top 
-var btn = document.getElementById("btn");
+let btn = document.getElementById("btn");
 window.onscroll = function() {funScroll()};
 
 function funScroll()

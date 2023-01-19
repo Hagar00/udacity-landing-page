@@ -49,11 +49,13 @@ p {
 .ulClass {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    display: flex;
+    justify-content: end;
+    list-style: none;
 }
 
 .liClass{
-    display: inline-block;
+    
 }
 
 .linkClass{
@@ -173,7 +175,15 @@ section {
         padding: 5em;
     }
 }
-
+@media only screen and (max-width : 562px){
+    .ulClass{
+        height: 200px;
+        flex-direction: column;
+    }
+    #main{
+        margin-top: 250px;
+    }
+}
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
