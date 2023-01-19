@@ -1,6 +1,22 @@
-# Landing Page Project
+# 1- Landing Page Project 
 
-## Table of Contents
+## 2- project description
+   Hello, this is landing page . i used html,css,javascript to achieve the functions.
+   the challenge that i met in that project :-
+        - Creating a navbar with JavaScript has some items. When I click on an item, it goes to its section .
+
+### 3- Table of Contents:
+    landing page : 
+     1-navbar => logo in left 
+                 ul in right have items (home, gallery, contact, about ).
+     2-body => first page have landing page header and text.
+               four sections.
+               button go to top
+     3-footer => Udacity copy right .
+                 created by me.
+
+#### 4- what i use in this project
+
 
 * [Instructions](#instructions)
 
