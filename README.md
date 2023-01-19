@@ -30,10 +30,10 @@
 
     => this is image is for the front-end page of my project  :page_with_curl:. 
 
-    ![Reference Image](./assest/images/landing-page.jpeg)
+   ![landing-page](https://user-images.githubusercontent.com/108625756/213463936-f6d6fdee-0a6e-45b2-9f17-2564e02a3eff.jpeg)
 
     => this is image is for home section .
-    ![Reference Image](./assest/images/home.jpeg)
+    ![home](https://user-images.githubusercontent.com/108625756/213464298-794b3ce8-cea6-4bd1-b3d9-c0dbc8d2abd2.jpeg)
 
 ### reference links 
 
