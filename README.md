@@ -41,8 +41,21 @@
     you can find Intersection Observer API here :
 
     *[links](#MDN)
-    
+
     <https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API> 
+
+### usage 
+     
+     any one have internet and link of hosting in git hub can use this project .
+
+### link of my project
+
+    <https://hagar00.github.io/udacity-landing-page/>
+
+### created by 👍
+
+        hagar hassan mohamed ✍️
+
 
 * [Instructions](#instructions)
 
