@@ -28,7 +28,7 @@
 
 ### my project 😊
 
-    => this is image is for the front-end page of my project  :page_with_curl:. 
+    => this is image is for the front-end page of my project . 
 
     ![Reference Image](./assest/images/landing-page.jpeg)
 
@@ -38,6 +38,9 @@
 ### reference links 
 
     you can find Intersection Observer API here :
+
+    *[links](#MDN)
+    
     <https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API> 
 
 * [Instructions](#instructions)
