@@ -1,5 +1,6 @@
 // In this function, I relied on Osama Al-Zero in making the scroll and w3school in linking the li with his section 
 
+var navbar = document.getElementById("nav");
 // function to create navbar 
 function navbarCreate(){
     // array of li items in navbar 
@@ -36,12 +37,16 @@ function navbarCreate(){
         function outHover(e){
         e.target.classList.remove("linkHover");
         };
+
     }
     navbarDiv.appendChild(navUl);
  
 
     // create for loop to create sections 
     for(var k = 0; k <links.length; k++){
+        var section = document.createElement("section");
+        section.id = links[k].toLowerCase();
+        // section.setAttribute("data-nav",  )
         var sectionDiv = document.createElement("div");
             sectionDiv.classList.add("landing__container");
             sectionDiv.id = links[k].toLowerCase();
@@ -61,11 +66,12 @@ function navbarCreate(){
         
             sectionDiv.appendChild(title);
             sectionDiv.appendChild(content);
-            document.getElementById("sections").appendChild(sectionDiv);
+            section.appendChild(sectionDiv);
+            document.getElementById("main").appendChild(section);
             if(k % 2 != 0){
                 // liArray[k].classList.add("oddSec");
                 console.log(sectionDiv);
-                sectionDiv.classList.add("oddSec");
+                section.classList.add("oddSec");
             }
     }
 
@@ -80,8 +86,64 @@ function navbarCreate(){
             });
         });
     }
-   document.getElementById("nav").appendChild(navbarDiv);
+   navbar.appendChild(navbarDiv);
 };
 
 navbarCreate();
 
+/*********************************************************************** */
+
+// function add active class using observing in MDN dec
+const observingSec =()=>{
+    const observe = new IntersectionObserver(
+        function (elements){
+            elements.forEach((element)=> {
+                console.log(element);
+                let activeLink = navbar.querySelector(`[href="#${element.target.id}"]`);
+                console.log(activeLink);
+                if(element.isIntersecting){
+                    element.target.classList.add("your-active-class");
+                    activeLink.classList.add("linkActive");
+                    location.hash= `${element.target.id}`;
+                } else{
+                    element.target.classList.remove("your-active-class");
+                    activeLink.classList.remove("linkActive");
+                }
+                
+            });
+        },
+        {
+            threshold: 0.7
+        }
+    );
+    return document.querySelectorAll("section").forEach((section)=>{
+        observe.observe(section);
+    });
+   
+};
+
+observingSec();
+
+/**********************************************************************************/
+
+// i learned this function in js course in maharatech by eng:neven 
+// function to button to top 
+var btn = document.getElementById("btn");
+window.onscroll = function() {funScroll()};
+
+function funScroll()
+{
+    if(window.scrollY > 20 ){
+        btn.style.display = "block";
+    }else{
+        btn.style.display = "none";
+    };
+};
+
+ function funTop (){
+    window.scrollTo({
+        top :0 ,
+        behavior:"smooth"
+    });
+};
+/*********************************************************************************** */
